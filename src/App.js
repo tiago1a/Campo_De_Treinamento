@@ -2,6 +2,9 @@ import {useEffect, useState} from 'react';
 import './App.css';
 import AtividadeForm from './components/AtividadeForm';
 import AtividadeLista from './components/AtividadeList';
+import RoutesApp from './routes';
+import GlobalStyle from './styles/global';
+import { AuthProvider } from "./contexts/auth";
 
 function App() {
     const [index, setIndex] = useState(0);
@@ -38,18 +41,23 @@ function pegarAtividade(id){
 
   return (
     <>
+    <AuthProvider>
+    <RoutesApp/>
+    <GlobalStyle/>
       <AtividadeForm
       addAtividade={addAtividade}
       cancelarAtividade={cancelarAtividade}
       atualizarAtividade={atualizarAtividade}
       atividadeSelecionada={atividade}
       atividades={atividades}
+      
       />
       <AtividadeLista
         atividades={atividades}
         deletarAtividades={deletarAtividades}
         pegarAtividade={pegarAtividade}
       />
+      </AuthProvider>
     </>
 );
   

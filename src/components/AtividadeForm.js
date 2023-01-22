@@ -96,18 +96,19 @@ function atividadeAtual(){
             type='submit'
           > 
             <i className='fas fa-plus me-2'></i>
-            ATIVIDADE 
+            TAREFA 
           </button>
         ): (
           <>
            <button 
-            className='btn btn-primary'
+            className='btn btn-success'
             type='submit' >
             <i className='fas fa-plus me-2'></i>
             Salvar 
           </button>
+          &nbsp;
           <button 
-            className='btn btn-primary'
+            className='btn btn-danger'
             type='submit'  
             onClick={handleCancelar} > 
             Cancelar 
